@@ -1,0 +1,25 @@
+body {
+    background-color: #212121;
+    color: #ffffff;
+  }
+  
+  div.number {
+    background-color: #333333;
+    display: inline-block;
+    padding: 2% 3%;
+    font-size: 35px;
+    margin: 5px;
+    border-radius: 4px;
+  }
+  
+  button.play-btn {
+    margin: 20px 5px;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+  
+  ul ol li ul {
+    margin-top: 8px;
+  }

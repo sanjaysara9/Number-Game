@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Number Generation Game" />
+    <meta name="keywords" content="Game,number game,number generation game" />
+    <title>Number Generation Game</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center my-5">Number Generation Game</h1>
+    </header>
+    <main>
+      <!-- Game section starts here -->
+      <section class="game-section">
+        <div class="container">
+          <div class="row">
+            <!-- Game container starts here -->
+            <div class="col-md-7">
+              <div class="game-inner-container">
+                <!-- Play area section starts here -->
+                <div class="play-area-container text-center">
+                  <div class="display-numbers-container">
+                    <div class="first-num number">0</div>
+                    <div class="second-num number">0</div>
+                    <div class="third-num number">0</div>
+                  </div>
+                  <button
+                    type="button"
+                    class="restart-btn btn btn-success px-0"
+                  >
+                    <a
+                      title="Click to restart"
+                      class="px-3 py-2 text-decoration-none text-white"
+                      href="index.html"
+                      >Restart</a
+                    >
+                  </button>
+                  <button
+                    type="button"
+                    title="Click to play"
+                    class="play-btn btn btn-success px-3"
+                  >
+                    Play
+                  </button>
+                </div>
+                <!-- Play area section ends here -->
+              </div>
+            </div>
+            <!-- Game container ends here -->
+            <!-- Score card container starts here -->
+            <div class="col-md-5 mt-4 mt-sm-0">
+              <div class="score-card-inner-container">
+                <h5>Scoreboard:</h5>
+                <p class="all-time-high-score">All time high score: 0</p>
+                <p class="current-high-score">Current high score: 0</p>
+                <p class="game-comment">Game comment: Let's start</p>
+                <p class="each-round-score"></p>
+                <p class="current-remaining-score">
+                  Current remaining score is: 0
+                </p>
+              </div>
+            </div>
+            <!-- Score card container ends here -->
+          </div>
+        </div>
+        <!-- Game rules section starts here -->
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="game-rules-container">
+                <h2>Game Rules:</h2>
+                <h5>Objective:</h5>
+                <p>
+                  The goal of the game is to generate numbers and update your
+                  score based on specific conditions. Keep playing to increase
+                  your score, but be careful – the game ends when your score
+                  drops to 0 or below!
+                </p>
+                <h5>How to Play:</h5>
+                <ol class="how-to-play-list">
+                  <li>
+                    <h6>Starting the Game:</h6>
+                    <ul type="disc">
+                      <li>
+                        Click the "Play" button to start the game. Each click
+                        generates a new round with three random numbers between
+                        1 and 9.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h6>Game Conditions:</h6>
+                    <ul type="disc">
+                      <li>
+                        Your score and game comment will be updated based on the
+                        following conditions:
+                      </li>
+                      <ol type="a">
+                        <li>
+                          All Numbers Same:
+                          <ul>
+                            <li>
+                              If all three numbers are the same, you earn 1000
+                              points.
+                            </li>
+                            <li>
+                              Game Comment: "You were lucky this time, you got
+                              1000 INR as all the numbers are the same".
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          All Numbers Even or All Numbers Odd:
+                          <ul>
+                            <li>
+                              If all three numbers are either even or odd, you
+                              earn 300 points.
+                            </li>
+                            <li>
+                              Game Comment: "You were lucky this time, you got
+                              300 INR as all the numbers are even" or "You were
+                              lucky this time, you got 300 INR as all the
+                              numbers are odd".
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          Numbers with a Difference of 1:
+                          <ul>
+                            <li>
+                              If the numbers have a difference of 1 between them
+                              (e.g., 1, 2, 3), you earn 800 points.
+                            </li>
+                            <li>
+                              Game Comment: "You were lucky this time, you got
+                              800 INR as all the numbers have a difference of
+                              1".
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          No Winning Conditions:
+                          <ul>
+                            <li>
+                              If none of the above conditions are met, you do
+                              not earn any points.
+                            </li>
+                            <li>
+                              Game Comment: "You were not lucky this time".
+                            </li>
+                          </ul>
+                        </li>
+                      </ol>
+                    </ul>
+                  </li>
+                  <li>
+                    <h6>Updating Score:</h6>
+                    <ul type="disc">
+                      <li>
+                        Each round subtracts 100 points from your remaining
+                        score.
+                      </li>
+                      <li>If your score drops to 0 or below, the game ends.</li>
+                      <li>Game Comment: "Game Over".</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h6>Restarting the Game:</h6>
+                    <ul type="disc">
+                      <li>
+                        If the game is over or you want to start fresh, click
+                        the "Restart" button to reset the game and your score.
+                      </li>
+                      <li>
+                        You can restart the game at any time, even in the middle
+                        of a round.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h6>Game Over:</h6>
+                    <ul type="disc">
+                      <li>
+                        When your score is less than or equal to 0, the "Play"
+                        button will be disabled.
+                      </li>
+                      <li>Click the "Restart" button to play again.</li>
+                    </ul>
+                  </li>
+                </ol>
+                <h5>Tips:</h5>
+                <ul>
+                  <li>
+                    Try to maximize your score by aiming for the conditions that
+                    give the highest points.
+                  </li>
+                  <li>
+                    Monitor your score closely and plan your strategy to avoid
+                    the game ending too soon.
+                  </li>
+                </ul>
+                <p>Enjoy the game and may luck be on your side!🤞🍀</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Game rules section ends here -->
+      </section>
+      <!-- Game section ends here -->
+    </main>
+    <!-- Bootstrap javascript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Custom javascript -->
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
